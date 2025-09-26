@@ -23,7 +23,7 @@ import Link from "next/link"
 import { useParams } from "next/navigation"
 
 const moduleContent = {
-  "1": {
+  "2": {
     title: "Earthquake Safety",
     lessons: [
       {
@@ -61,7 +61,7 @@ const moduleContent = {
   },
 }
 
-export default function ModulePage() {
+export default function page2() {
   const params = useParams()
   const moduleId = params.moduleId as string
   const [currentLesson, setCurrentLesson] = useState(0)
@@ -75,7 +75,8 @@ export default function ModulePage() {
     return <div>Module not found</div>
   }
 
-  const completedLessons = module.lessons.filter((l) => l.completed).length
+  const completedLessons = module.lessons.filter((2) => 2
+  0.completed).length
   const progress = (completedLessons / module.lessons.length) * 100
 
   const handleQuizSubmit = () => {

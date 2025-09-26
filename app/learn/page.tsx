@@ -9,6 +9,8 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Shield, BookOpen, Play, CheckCircle, Lock, Trophy, Clock, Download } from "lucide-react"
+import { useRouter } from "next/navigation"
+
 
 const modules = [
   // Example modules data
@@ -57,6 +59,8 @@ const modules = [
 ]
 
 export default function LearnPage() {
+  
+const router= useRouter();
   const [selectedCategory, setSelectedCategory] = useState("all")
 
   const totalPoints = modules.reduce((sum, module) => (module.status === "completed" ? sum + module.points : sum), 0)
@@ -71,7 +75,7 @@ export default function LearnPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1 slide-up">{/* ... existing sidebar code ... */}</div>
+          {/* <div className="lg:col-span-1 slide-up">... existing sidebar code ...</div> */}
 
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
@@ -190,9 +194,9 @@ export default function LearnPage() {
                                     ? "Continue"
                                     : "Play"}
                               </Button>
-                              <Button variant="outline" className="hover-lift bg-transparent">
-                                <Download className="mr-2 h-4 w-4" />
-                                Download
+                              <Button variant="outline" className="hover-lift bg-transparent " onClick={() => router.push("/learn/1")}>
+                                <BookOpen className="mr-2 h-5 w-5" />
+                                Module
                               </Button>
                             </>
                           )}

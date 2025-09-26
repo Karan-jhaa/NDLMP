@@ -29,21 +29,21 @@ import { Footer } from "@/components/footer"
 const emergencyContacts = [
   {
     id: 1,
-    name: "Emergency Services (911)",
-    phone: "911",
+    name: "NDRF",
+    phone: "011-24363260",
     type: "emergency",
-    description: "Police, Fire, Medical Emergency",
-    icon: Phone,
+    description: "Earthquake/Flood/Disaster/N.D.R.F",
+    icon: Heart,
     priority: "critical",
     available: "24/7",
-    category: "general",
+    category: "Earthquake/Flood/Disaster/N.D.R.F",
   },
   {
     id: 2,
-    name: "Poison Control Center",
-    phone: "1-800-222-1222",
+    name: "102",
+    phone: "National Ambulance Service (NAS).",
     type: "emergency",
-    description: "24/7 poison emergency assistance",
+    description: "National Ambulance Service (NAS).",
     icon: Heart,
     priority: "high",
     available: "24/7",
@@ -51,31 +51,74 @@ const emergencyContacts = [
   },
   {
     id: 3,
-    name: "Red Cross Disaster Relief",
-    phone: "1-800-733-2767",
-    type: "disaster",
-    description: "Disaster assistance and emergency shelter",
+    name: "Police Helpline",
+    phone: "100",
+    type: "emergency",
+    description: "Police Helpline",
     icon: Building,
     priority: "high",
     available: "24/7",
-    category: "disaster",
+    category: "Police",
   },
   {
     id: 4,
-    name: "National Suicide Prevention Lifeline",
-    phone: "988",
-    type: "crisis",
-    description: "Mental health crisis support",
+    name: "Fire",
+    phone: "101",
+    type: "emergency",
+    description: "Fire Helpline",
+    icon: Heart,
+    priority: "high",
+    available: "24/7",
+    category: "Fire", 
+  },
+  {
+    id: 5,
+    name: "Cyber Crime Helpline",
+    phone: "1930",
+    type: "emergency",
+    description: "Cyber Crime Helpline",
     icon: Heart,
     priority: "critical",
     available: "24/7",
-    category: "mental-health",
+    category: "Cyber Crime",
+  },
+  {
+    id: 6,
+    name: "Integrated Helpline",
+    phone: "112",
+    type: "emergency",
+    description: "Emergency Response Support System (ERSS)",
+    icon: Phone,
+    priority: "critical",
+    available: "24/7",
+    category: "general",
+  },
+   {
+    id: 7,
+    name: "Road Accident Helpline",
+    phone: "1073",
+    type: "emergency",
+    description: "Road Accident Helpline",
+    icon: Heart,
+    priority: "critical",
+    available: "24/7",
+    category: "Road Accident",
+  }, {
+    id: 8,
+    name: "LPG Leak Helpline",
+    phone: "1930",
+    type: "emergency",
+    description: "LPG Leak Helpline",
+    icon: Heart,
+    priority: "critical",
+    available: "24/7",
+    category: "LPG Leak Helpline",
   },
 ]
 
 const localContacts = [
   {
-    id: 5,
+    id: 9,
     name: "San Francisco General Hospital",
     phone: "(628) 206-8000",
     address: "1001 Potrero Ave, San Francisco, CA 94110",
@@ -88,7 +131,7 @@ const localContacts = [
     distance: "2.3 miles",
   },
   {
-    id: 6,
+    id: 10,
     name: "SF Fire Department Station 1",
     phone: "(415) 558-3200",
     address: "676 Howard St, San Francisco, CA 94105",
@@ -101,7 +144,7 @@ const localContacts = [
     distance: "1.8 miles",
   },
   {
-    id: 7,
+    id: 11,
     name: "SFPD Central Station",
     phone: "(415) 315-2400",
     address: "766 Vallejo St, San Francisco, CA 94133",
@@ -114,7 +157,7 @@ const localContacts = [
     distance: "2.1 miles",
   },
   {
-    id: 8,
+    id: 12,
     name: "SF Emergency Management",
     phone: "(415) 558-2700",
     address: "1011 Turk St, San Francisco, CA 94102",
@@ -130,7 +173,7 @@ const localContacts = [
 
 const personalContacts = [
   {
-    id: 9,
+    id: 13,
     name: "John Smith (Emergency Contact)",
     phone: "(555) 123-4567",
     relationship: "Spouse",
@@ -141,7 +184,7 @@ const personalContacts = [
     category: "family",
   },
   {
-    id: 10,
+    id: 14,
     name: "Sarah Johnson (Backup Contact)",
     phone: "(555) 987-6543",
     relationship: "Sister",
@@ -196,7 +239,7 @@ export default function ContactsPage() {
               <div className="h-6 w-px bg-border" />
               <h1 className="text-xl font-semibold text-foreground">Emergency Contacts</h1>
             </div>
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <Button variant="outline" size="sm" className="hover-lift bg-transparent">
                 <Edit className="h-4 w-4 mr-2" />
                 Manage Contacts
@@ -205,14 +248,14 @@ export default function ContactsPage() {
                 <Plus className="h-4 w-4 mr-2" />
                 Add Contact
               </Button>
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
 
-      <div className="bg-muted/30 border-b border-border pulse-glow">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center gap-4 overflow-x-auto">
+      {/* <div className="bg-muted/30 border-b border-border pulse-glow"> */}
+        {/* <div className="container mx-auto px-4 py-4"> */}
+          {/* <div className="flex items-center gap-4 overflow-x-auto">
             <span className="text-sm font-medium text-muted-foreground whitespace-nowrap">Quick Call:</span>
             <Button
               variant="destructive"
@@ -243,7 +286,7 @@ export default function ContactsPage() {
             </Button>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -274,14 +317,15 @@ export default function ContactsPage() {
                     onChange={(e) => setSelectedCategory(e.target.value)}
                     className="w-full p-2 border border-border rounded-md bg-background"
                   >
-                    <option value="all">All Categories</option>
-                    <option value="general">General Emergency</option>
+                    <option value="all">Earthquake/Flood/Disaster/N.D.R.F</option>
+                    <option value="general">General</option>
                     <option value="medical">Medical</option>
-                    <option value="fire">Fire Department</option>
-                    <option value="police">Police</option>
-                    <option value="disaster">Disaster Relief</option>
+                    <option value="Fire">Fire</option>
+                    <option value="Police">Police</option>
+                    <option value="Road Accident">Road Accident</option>
                     <option value="family">Family</option>
-                    <option value="government">Government</option>
+                    <option value="Cyber Crime">Cyber Crime</option>
+                    <option value="LPG Leak Helpline">LPG Leak Helpline</option>
                   </select>
                 </div>
               </CardContent>
@@ -295,7 +339,7 @@ export default function ContactsPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-sm text-muted-foreground mb-3">San Francisco, CA</div>
+                <div className="text-sm text-muted-foreground mb-3">India</div>
                 <p className="text-xs text-muted-foreground mb-3">Contacts are sorted by proximity to your location.</p>
                 <Button variant="outline" size="sm" className="w-full bg-transparent hover-lift">
                   Update Location
@@ -316,8 +360,8 @@ export default function ContactsPage() {
             <Tabs defaultValue="emergency" className="mb-8">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="emergency">Emergency Services</TabsTrigger>
-                <TabsTrigger value="local">Local Services</TabsTrigger>
-                <TabsTrigger value="personal">Personal Contacts</TabsTrigger>
+                {/* <TabsTrigger value="local">Local Services</TabsTrigger> */}
+                {/* <TabsTrigger value="personal">Personal Contacts</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="emergency" className="space-y-4">
