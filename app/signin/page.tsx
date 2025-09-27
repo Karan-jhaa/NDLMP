@@ -10,11 +10,33 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Shield, Eye, EyeOff, Mail, Lock } from "lucide-react"
 import Link from "next/link"
+import { createClientComponentClient } from "@supabase/auth-helpers-nextjs"
 
 export default function SignInPage() {
+  const supabase = createClientComponentClient()
+  
   const [showPassword, setShowPassword] = useState(false)
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleSignIn = async () => {
+    setLoading(true)
+    setError("")
+    const { data, error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    })
+    setLoading(false)
+    
+    if (error) {
+      setError(error.message)
+    } else {
+      // Redirect user to dashboard or homepage
+      window.location.href = "/dashboard"
+    }
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
@@ -79,6 +101,8 @@ export default function SignInPage() {
                 </div>
               </div>
 
+              {error && <p className="text-sm text-red-500">{error}</p>}
+
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <Checkbox id="remember" />
@@ -91,8 +115,13 @@ export default function SignInPage() {
                 </Link>
               </div>
 
-              <Button className="w-full bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition border hover-lift" size="lg">
-                Sign In
+              <Button
+                className="w-full bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition border hover-lift"
+                size="lg"
+                onClick={handleSignIn}
+                disabled={loading}
+              >
+                {loading ? "Signing In..." : "Sign In"}
               </Button>
 
               <div className="relative">

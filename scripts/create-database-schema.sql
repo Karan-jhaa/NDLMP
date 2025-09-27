@@ -1,3 +1,12 @@
+CREATE TABLE public.profiles (
+  id UUID NOT NULL REFERENCES auth.users (id) ON DELETE CASCADE,
+  username TEXT UNIQUE,
+  full_name TEXT,
+  avatar_url TEXT,
+  created_at TIMESTAMPTZ DEFAULT now(),
+  PRIMARY KEY (id)
+);
+
 -- Enable necessary extensions
 create extension if not exists "pgcrypto";
 
