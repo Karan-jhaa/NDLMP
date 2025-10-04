@@ -225,7 +225,7 @@ export default function ContactsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
@@ -352,7 +352,7 @@ export default function ContactsPage() {
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-2">Emergency Contacts</h2>
-              <p className="text-muted-foreground">
+              <p className="text-white-foreground">
                 Quick access to emergency services, local contacts, and personal emergency contacts.
               </p>
             </div>

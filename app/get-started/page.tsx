@@ -88,7 +88,7 @@ export default function GetStartedPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 bg-[url('/12310.jpg')] bg-cover bg-center bg-no-repeat">
       <Navbar />
 
       <div className="container mx-auto px-4 py-16">
@@ -97,8 +97,8 @@ export default function GetStartedPage() {
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
               <Shield className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">Join NDLMP</h1>
-            <p className="text-muted-foreground">
+            <h1 className="text-3xl font-bold text-white-foreground mb-2">Join NDLMP</h1>
+            <p className="text-white-foreground">
               Start your disaster preparedness journey today and help build a safer community
             </p>
           </div>

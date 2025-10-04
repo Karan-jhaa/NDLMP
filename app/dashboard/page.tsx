@@ -124,7 +124,7 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       {/* Header */}

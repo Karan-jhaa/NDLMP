@@ -39,17 +39,17 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 bg-[url('/12310.jpg')] bg-cover bg-center bg-no-repeat">
       <Navbar />
 
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-md mx-auto">
           <div className="text-center mb-8 slide-up">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="h-8 w-8 text-primary" />
+              <Shield className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-3xl font-bold text-foreground mb-2">Welcome Back</h1>
-            <p className="text-muted-foreground">Sign in to continue your disaster preparedness journey</p>
+            <h1 className="text-3xl font-bold text-white-foreground mb-2">Welcome Back</h1>
+            <p className="text-white-foreground">Sign in to continue your disaster preparedness journey</p>
           </div>
 
           <Card className="scale-in interactive-card">

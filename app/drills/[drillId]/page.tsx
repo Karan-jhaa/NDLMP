@@ -17,6 +17,7 @@ import {
   Target,
   Timer,
   Mountain,
+   Waves, MountainSnow, Sun, Droplets, Wind
 } from "lucide-react"
 import Link from "next/link"
 import { useParams } from "next/navigation"
@@ -95,6 +96,263 @@ const drillData = {
       },
     ],
   },
+  "2": {
+  title: "Tsunami Evacuation Drill",
+  description: "Practice safe evacuation during a tsunami warning",
+  type: "tsunami",
+  icon: Waves,
+  duration: 1200, // 20 minutes
+  steps: [
+    {
+      id: 1,
+      title: "Tsunami Alert",
+      description: "A tsunami warning has been issued.",
+      duration: 30,
+      instructions: "Stay calm and prepare for evacuation.",
+      action: "wait",
+    },
+    {
+      id: 2,
+      title: "Move to Higher Ground",
+      description: "Quickly evacuate to higher ground or inland.",
+      duration: 300,
+      instructions: "Leave low-lying areas immediately and head to safe zones.",
+      action: "evacuate",
+    },
+    {
+      id: 3,
+      title: "Avoid Coastline",
+      description: "Stay away from beaches and rivers.",
+      duration: 120,
+      instructions: "Do not watch waves. Keep moving inland or uphill.",
+      action: "avoid",
+    },
+    {
+      id: 4,
+      title: "Follow Evacuation Routes",
+      description: "Use designated safe evacuation routes.",
+      duration: 240,
+      instructions: "Follow signboards or officials’ instructions.",
+      action: "route",
+    },
+    {
+      id: 5,
+      title: "Assembly Point",
+      description: "Gather at the designated safe assembly point.",
+      duration: 300,
+      instructions: "Wait for the official all-clear before leaving.",
+      action: "assemble",
+    },
+  ],
+},
+
+"3": {
+  title: "Landslide Safety Drill",
+  description: "Practice actions to take during a landslide threat",
+  type: "landslide",
+  icon: MountainSnow,
+  duration: 900, // 15 minutes
+  steps: [
+    {
+      id: 1,
+      title: "Warning Issued",
+      description: "Authorities warn of possible landslides.",
+      duration: 30,
+      instructions: "Stay alert and prepare to act quickly.",
+      action: "wait",
+    },
+    {
+      id: 2,
+      title: "Move to Safer Ground",
+      description: "Relocate to stable ground away from slopes.",
+      duration: 240,
+      instructions: "Avoid steep slopes, riverbanks, and loose soil areas.",
+      action: "evacuate",
+    },
+    {
+      id: 3,
+      title: "Stay Indoors (If Safe)",
+      description: "If unable to evacuate, stay indoors.",
+      duration: 120,
+      instructions: "Move to upper floors and avoid windows facing slopes.",
+      action: "shelter",
+    },
+    {
+      id: 4,
+      title: "Be Alert",
+      description: "Watch for cracks, sounds, or shifting ground.",
+      duration: 180,
+      instructions: "Report unusual signs immediately to authorities.",
+      action: "assess",
+    },
+    {
+      id: 5,
+      title: "Assembly Point",
+      description: "Gather at a pre-decided safe location.",
+      duration: 330,
+      instructions: "Wait for further instructions.",
+      action: "assemble",
+    },
+  ],
+},
+
+"4": {
+  title: "Heat Wave Safety Drill",
+  description: "Practice safety steps during extreme heat",
+  type: "heatwave",
+  icon: Sun,
+  duration: 600, // 10 minutes
+  steps: [
+    {
+      id: 1,
+      title: "Heatwave Alert",
+      description: "Authorities announce a heatwave warning.",
+      duration: 30,
+      instructions: "Stay calm and prepare.",
+      action: "wait",
+    },
+    {
+      id: 2,
+      title: "Seek Shade/Indoors",
+      description: "Move away from direct sunlight.",
+      duration: 180,
+      instructions: "Stay indoors or in shaded areas.",
+      action: "shelter",
+    },
+    {
+      id: 3,
+      title: "Stay Hydrated",
+      description: "Drink plenty of safe drinking water.",
+      duration: 120,
+      instructions: "Avoid alcohol and caffeine.",
+      action: "hydrate",
+    },
+    {
+      id: 4,
+      title: "Cool Down",
+      description: "Use fans, wet cloth, or cooling packs.",
+      duration: 120,
+      instructions: "Avoid overexertion. Take breaks.",
+      action: "cool",
+    },
+    {
+      id: 5,
+      title: "Check on Vulnerable People",
+      description: "Look after children, elderly, and sick.",
+      duration: 150,
+      instructions: "Ensure everyone is safe and hydrated.",
+      action: "assist",
+    },
+  ],
+},
+
+"5": {
+  title: "Flood Evacuation Drill",
+  description: "Practice actions during flooding",
+  type: "flood",
+  icon: Droplets,
+  duration: 1500, // 25 minutes
+  steps: [
+    {
+      id: 1,
+      title: "Flood Alert",
+      description: "Heavy rainfall has caused rising water levels.",
+      duration: 60,
+      instructions: "Prepare for evacuation.",
+      action: "wait",
+    },
+    {
+      id: 2,
+      title: "Turn Off Utilities",
+      description: "Turn off gas, electricity, and water if safe.",
+      duration: 120,
+      instructions: "Prevent accidents during flooding.",
+      action: "safety",
+    },
+    {
+      id: 3,
+      title: "Move to Higher Ground",
+      description: "Relocate to higher floors or elevated areas.",
+      duration: 300,
+      instructions: "Avoid low-lying areas and bridges.",
+      action: "evacuate",
+    },
+    {
+      id: 4,
+      title: "Avoid Floodwater",
+      description: "Do not walk or drive through floodwaters.",
+      duration: 240,
+      instructions: "Even shallow water can be dangerous.",
+      action: "avoid",
+    },
+    {
+      id: 5,
+      title: "Assembly Point",
+      description: "Gather at the safe evacuation center.",
+      duration: 480,
+      instructions: "Check in with coordinators and wait for all-clear.",
+      action: "assemble",
+    },
+  ],
+},
+
+"6": {
+  title: "Cyclone Safety Drill",
+  description: "Practice protective actions during a cyclone",
+  type: "cyclone",
+  icon: Wind,
+  duration: 1800, // 30 minutes
+  steps: [
+    {
+      id: 1,
+      title: "Cyclone Warning",
+      description: "Authorities issue a cyclone alert.",
+      duration: 60,
+      instructions: "Prepare immediately.",
+      action: "wait",
+    },
+    {
+      id: 2,
+      title: "Secure Home",
+      description: "Shut windows, doors, and secure loose items.",
+      duration: 300,
+      instructions: "Prevent flying debris.",
+      action: "secure",
+    },
+    {
+      id: 3,
+      title: "Move to Safe Shelter",
+      description: "Stay indoors or move to designated cyclone shelter.",
+      duration: 480,
+      instructions: "Avoid staying in weak structures.",
+      action: "shelter",
+    },
+    {
+      id: 4,
+      title: "Stay Away from Windows",
+      description: "Protect yourself from strong winds.",
+      duration: 180,
+      instructions: "Stay in central, windowless rooms if possible.",
+      action: "protect",
+    },
+    {
+      id: 5,
+      title: "Emergency Kit",
+      description: "Keep essentials like water, food, and first aid.",
+      duration: 300,
+      instructions: "Ensure mobile and radio are charged.",
+      action: "prepare",
+    },
+    {
+      id: 6,
+      title: "Assembly Point",
+      description: "After cyclone, move to safe assembly point.",
+      duration: 480,
+      instructions: "Wait for authorities’ clearance.",
+      action: "assemble",
+    },
+  ],
+},
 }
 
 export default function DrillPage() {
@@ -184,7 +442,7 @@ export default function DrillPage() {
     const score = Math.max(60, 100 - Math.floor((totalTime - drill.duration * 1000) / 1000))
 
     return (
-      <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700">
+      <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
         {/* Header */}
         <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4">
@@ -265,7 +523,7 @@ export default function DrillPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">

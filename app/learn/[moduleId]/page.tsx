@@ -949,7 +949,7 @@ export default function ModulePage() {
 
   if (showQuiz) {
     return (
-      <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700">
+      <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
         {/* Header */}
         <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
           <div className="container mx-auto px-4 py-4">
@@ -1065,7 +1065,7 @@ export default function ModulePage() {
   const currentLessonData = module.lessons[currentLesson]
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       {/* Header */}
       <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">

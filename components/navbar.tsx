@@ -8,6 +8,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navigation = [
+  { name: "Home", href: "/" },
   { name: "Learn", href: "/learn" },
   { name: "Alerts", href: "/alerts" },
   { name: "Drills", href: "/drills" },
@@ -49,7 +50,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               className="relative hover-lift hover:bg-white/10 text-white hover:text-white"
@@ -58,7 +59,7 @@ export function Navbar() {
               <span className="absolute -top-1 -right-1 h-3 w-3 bg-red-500 rounded-full text-xs flex items-center justify-center">
                 <span className="sr-only">New notifications</span>
               </span>
-            </Button>
+            </Button> */}
 
             {/* Desktop Auth Buttons */}
             <div className="hidden md:flex items-center gap-2">

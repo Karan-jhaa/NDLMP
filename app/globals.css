@@ -136,8 +136,8 @@
   }
   body {
     /* Ensuring blue gradient background is applied properly */
-    background: gradient-to-r from-amber-500 to-orange-700 fade-in;
-    background: gradient-to-r from-amber-500 to-orange-700 fade-in !important;
+    background: gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70;
+    background: gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 !important;
     color: white;
     min-height: 100vh;
     /* Remove conflicting background classes */

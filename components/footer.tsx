@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-gradient-to-r from-amber-500 to-orange-700 py-12 px-4 page-transition">
+    <footer className="border-t border-border  bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 py-12 px-4 page-transition">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="fade-in">

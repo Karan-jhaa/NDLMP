@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useRouter } from "next/navigation"
 import {
   Shield,
   Users,
@@ -21,6 +22,7 @@ import {
   Wind,
   MapPin,
   Star,
+  MountainSnow, Sun, Droplets,
 } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -32,7 +34,7 @@ const upcomingDrills = [
     description: "Practice the Drop, Cover, and Hold On technique",
     type: "earthquake",
     icon: Mountain,
-    scheduledDate: "2024-01-20T10:00:00Z",
+    scheduledDate: "2025-01-20T10:00:00Z",
     duration: "15 minutes",
     participants: 245,
     maxParticipants: 300,
@@ -43,70 +45,115 @@ const upcomingDrills = [
   },
   {
     id: 2,
-    title: "Fire Evacuation Drill",
-    description: "Complete building evacuation simulation",
-    type: "fire",
-    icon: Flame,
-    scheduledDate: "2024-01-22T14:30:00Z",
+    title: "Tsunami Evacuation Drill",
+    description: "Practice safe evacuation during a tsunami warning",
+    type: "tsunami",
+    icon: Waves,
+    scheduledDate: "2025-01-22T14:30:00Z",
     duration: "20 minutes",
     participants: 189,
     maxParticipants: 250,
     difficulty: "Intermediate",
     points: 75,
     status: "upcoming",
-    location: "Building A & B",
+    location: "Beachfront / Coastal Zone",
   },
   {
     id: 3,
-    title: "Severe Weather Shelter",
-    description: "Practice sheltering procedures for severe weather",
-    type: "weather",
-    icon: Wind,
-    scheduledDate: "2024-01-25T11:15:00Z",
-    duration: "12 minutes",
+    title: "Landslide Safety Drill",
+    description: "Practice actions to take during a landslide threat",
+    type: "landslite",
+    icon: MountainSnow,
+    scheduledDate: "2025-01-25T11:15:00Z",
+    duration: "15 minutes",
     participants: 156,
     maxParticipants: 200,
-    difficulty: "Beginner",
+    difficulty: "Intermediate",
     points: 40,
     status: "upcoming",
-    location: "Gymnasium",
+    location: "Hillside / Mountain Area",
   },
-]
-
-const completedDrills = [
   {
     id: 4,
-    title: "Flood Response Drill",
-    description: "Emergency response to flooding scenario",
-    type: "flood",
-    icon: Waves,
-    completedDate: "2024-01-15T09:00:00Z",
-    duration: "18 minutes",
-    participants: 198,
-    yourTime: "2:45",
-    averageTime: "3:12",
-    score: 92,
-    points: 65,
-    status: "completed",
-    feedback: "Excellent response time! Remember to check for injuries after reaching safety.",
+    title: "Heat Wave Safety Drill",
+    description: "Practice safety steps during extreme heat",
+    type: "heatwave",
+    icon: Sun,
+    scheduledDate: "2025-01-25T11:15:00Z",
+    duration: "10 minutes",
+    participants: 156,
+    maxParticipants: 200,
+    difficulty: "Intermediate",
+    points: 40,
+    status: "upcoming",
+    location: "Gymnasium / Indoor Hall",
   },
   {
     id: 5,
-    title: "Lockdown Procedure",
-    description: "Security lockdown and shelter-in-place drill",
-    type: "security",
-    icon: Shield,
-    completedDate: "2024-01-10T13:20:00Z",
+    title: "Flood Evacuation Drill",
+    description: "Practice actions during flooding",
+    type: "flood",
+    icon: Droplets,
+    scheduledDate: "2025-01-25T11:15:00Z",
     duration: "25 minutes",
-    participants: 234,
-    yourTime: "1:58",
-    averageTime: "2:15",
-    score: 88,
-    points: 80,
-    status: "completed",
-    feedback: "Good job securing the area. Work on quieter movement next time.",
+    participants: 156,
+    maxParticipants: 200,
+    difficulty: "Advanced",
+    points: 40,
+    status: "upcoming",
+    location: "Ground Floor / Flood-prone Zone",
+  },
+  {
+    id: 6,
+    title: "Cyclone Safety Drill",
+    description: "Practice protective actions during a cyclone",
+    type: "cyclone",
+    icon: Wind,
+    scheduledDate: "2025-01-25T11:15:00Z",
+    duration: "30 minutes",
+    participants: 156,
+    maxParticipants: 200,
+    difficulty: "Advanced",
+    points: 40,
+    status: "upcoming",
+    location: "Cyclone Shelter / Indoor Safe Zone",
   },
 ]
+
+// const completedDrills = [
+//   {
+//     id: 4,
+//     title: "Flood Response Drill",
+//     description: "Emergency response to flooding scenario",
+//     type: "flood",
+//     icon: Waves,
+//     completedDate: "2024-01-15T09:00:00Z",
+//     duration: "18 minutes",
+//     participants: 198,
+//     yourTime: "2:45",
+//     averageTime: "3:12",
+//     score: 92,
+//     points: 65,
+//     status: "upcoming",
+//     feedback: "Excellent response time! Remember to check for injuries after reaching safety.",
+//   },
+//   {
+//     id: 5,
+//     title: "Lockdown Procedure",
+//     description: "Security lockdown and shelter-in-place drill",
+//     type: "security",
+//     icon: Shield,
+//     completedDate: "2024-01-10T13:20:00Z",
+//     duration: "25 minutes",
+//     participants: 234,
+//     yourTime: "1:58",
+//     averageTime: "2:15",
+//     score: 88,
+//     points: 80,
+//     status: "upcoming",
+//     feedback: "Good job securing the area. Work on quieter movement next time.",
+//   },
+// ]
 
 const drillStats = {
   totalDrills: 12,
@@ -119,6 +166,9 @@ const drillStats = {
 
 export default function DrillsPage() {
   const [selectedTab, setSelectedTab] = useState("upcoming")
+
+  const router= useRouter();
+  const [selectedCategory, setSelectedCategory] = useState("all")
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -160,13 +210,14 @@ export default function DrillsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar - Stats */}
-          <div className="lg:col-span-1 slide-up">
+          {<div className="bg-[url('/1238.jpg')] bg-cover bg-center bg-no-repeat"></div>}
+          {/* <div className="lg:col-span-1 slide-up">
             <Card className="mb-6 interactive-card glow-effect">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -243,13 +294,13 @@ export default function DrillsPage() {
                 </div>
               </CardContent>
             </Card>
-          </div>
+          </div> */}
 
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-2">Virtual Emergency Drills</h2>
-              <p className="text-muted-foreground">
+              <p className="text-white-foreground">
                 Practice emergency procedures through scheduled drills and track your response performance.
               </p>
             </div>
@@ -257,8 +308,8 @@ export default function DrillsPage() {
             <Tabs value={selectedTab} onValueChange={setSelectedTab} className="mb-8">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="upcoming">Upcoming Drills</TabsTrigger>
-                <TabsTrigger value="completed">Completed</TabsTrigger>
-                <TabsTrigger value="practice">Practice Mode</TabsTrigger>
+                {/* <TabsTrigger value="completed">Completed</TabsTrigger> */}
+                {/* <TabsTrigger value="practice">Practice Mode</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="upcoming" className="space-y-4">
@@ -322,14 +373,14 @@ export default function DrillsPage() {
                         </div>
 
                         <div className="flex gap-2">
-                          <Button className="flex-1 bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition border hover-lift">
-                            <Play className="h-4 w-4 mr-2" />
+                          <Button className="flex-1 bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition border hover-lift" onClick={() => router.push(`/drills/${drill.id}`)}>
+                            <Play className="h-4 w- mr-2" />
                             Join Drill
                           </Button>
-                          <Button variant="outline" className="hover-lift bg-transparent">
+                          {/* <Button variant="outline" className="hover-lift bg-transparent">
                             <Calendar className="h-4 w-4 mr-2" />
                             Add to Calendar
-                          </Button>
+                          </Button> */}
                         </div>
                       </div>
                     </CardContent>
@@ -337,7 +388,7 @@ export default function DrillsPage() {
                 ))}
               </TabsContent>
 
-              <TabsContent value="completed" className="space-y-4">
+              {/* <TabsContent value="completed" className="space-y-4">
                 {completedDrills.map((drill) => (
                   <Card key={drill.id} className="interactive-card">
                     <CardHeader>
@@ -406,7 +457,7 @@ export default function DrillsPage() {
                     </CardContent>
                   </Card>
                 ))}
-              </TabsContent>
+              </TabsContent> */}
 
               <TabsContent value="practice" className="space-y-4">
                 <Card>

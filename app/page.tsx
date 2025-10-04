@@ -8,12 +8,12 @@ import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 slide-up">
-        <div className="container mx-auto text-center">
+      <section className="py-20 px-4 slide-up bg-[url('/1236.jpg')] bg-cover bg-center bg-no-repeat">
+        <div className="container mx-auto text-center ">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl font-bold text-white-foreground mb-6 text-balance">Be Prepared. Stay Safe. Act Fast.</h2>
             <p className="text-xl text-gray-700-foreground mb-8 text-pretty">
@@ -38,6 +38,12 @@ export default function HomePage() {
                 <Button variant="secondary" size="lg" className="text-lg px-8 py-3 rounded-lg bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition hover-lift">
                   <Users className="mr-2 h-5 w-5" />
                   Join a Drill
+                </Button>
+              </Link>
+              <Link href="/contacts">
+                <Button variant="secondary" size="lg" className="text-lg px-8 py-3 rounded-lg bg-white text-amber-600 hover:bg-amber-700 hover:text-white transition hover-lift">
+                  <Users className="mr-2 h-5 w-5" />
+                  Contacts
                 </Button>
               </Link>
             </div>

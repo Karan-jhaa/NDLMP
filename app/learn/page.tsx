@@ -121,19 +121,19 @@ const handlePlayVideo = (videoUrl) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-amber-500 to-orange-700 fade-in">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          {/* <div className="lg:col-span-1 slide-up">... existing sidebar code ...</div> */}
+          <div className="lg:col-span-1 slide-up bg-[url('/12310.jpg')] bg-cover bg-center bg-no-repeat"><b>NDLMP</b></div>
 
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
               <h2 className="text-3xl font-bold text-foreground mb-2">Interactive Learning Modules</h2>
-              <p className="text-muted-foreground">
+              <p className="text-white-foreground">
                 Master disaster preparedness through engaging multimedia content, quizzes, and simulations.
               </p>
             </div>
