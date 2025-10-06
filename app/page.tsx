@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -5,14 +6,34 @@ import { Shield, AlertTriangle, Users, BookOpen, Trophy, Bell, Phone, BarChart3 
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { useState, useEffect } from "react";
+
+  const images = [
+    "/12311.png",
+    "/12312.png",
+    "/1235.jpg",
+    "/1236.jpg",
+    "/12313.png"
+  ];
 
 export default function HomePage() {
+ const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 1500); // 1 second interval
+    return () => clearInterval(interval);
+  })
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
+    <div className="relative min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 slide-up bg-[url('/1236.jpg')] bg-cover bg-center bg-no-repeat">
+      <section className="py-20 px-4 slide-up bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${images[currentIndex]})` }}>
         <div className="container mx-auto text-center ">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-5xl font-bold text-white-foreground mb-6 text-balance">Be Prepared. Stay Safe. Act Fast.</h2>

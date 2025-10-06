@@ -351,7 +351,7 @@ export default function ContactsPage() {
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">Emergency Contacts</h2>
+              <h2 className="text-3xl font-bold text-white-foreground mb-2">Emergency Contacts</h2>
               <p className="text-white-foreground">
                 Quick access to emergency services, local contacts, and personal emergency contacts.
               </p>

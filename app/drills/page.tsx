@@ -216,7 +216,7 @@ export default function DrillsPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar - Stats */}
-          {<div className="bg-[url('/1238.jpg')] bg-cover bg-center bg-no-repeat"></div>}
+          {<div className="text-5xl bg-[url('/1238.jpg')] bg-cover bg-center bg-no-repeat"><b>NATURAL DISASTER LEARNING AND MANAGMENT PORTAL</b></div>}
           {/* <div className="lg:col-span-1 slide-up">
             <Card className="mb-6 interactive-card glow-effect">
               <CardHeader>
@@ -299,7 +299,7 @@ export default function DrillsPage() {
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">Virtual Emergency Drills</h2>
+              <h2 className="text-3xl font-bold text-white-foreground mb-2">Virtual Emergency Drills</h2>
               <p className="text-white-foreground">
                 Practice emergency procedures through scheduled drills and track your response performance.
               </p>

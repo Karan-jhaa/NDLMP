@@ -127,12 +127,12 @@ const handlePlayVideo = (videoUrl) => {
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1 slide-up bg-[url('/12310.jpg')] bg-cover bg-center bg-no-repeat"><b>NDLMP</b></div>
+          <div className="text-5xl lg:col-span-1 slide-up bg-[url('/1239.jpg')] bg-cover bg-center bg-no-repeat"><b>NATURAL DISASTER LEARNING AND MANAGMENT PORTAL</b></div>
 
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">Interactive Learning Modules</h2>
+              <h2 className="text-3xl font-bold text-white-foreground mb-2">Interactive Learning Modules</h2>
               <p className="text-white-foreground">
                 Master disaster preparedness through engaging multimedia content, quizzes, and simulations.
               </p>

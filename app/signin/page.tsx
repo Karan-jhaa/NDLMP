@@ -39,7 +39,7 @@ export default function SignInPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 bg-[url('/12310.jpg')] bg-cover bg-center bg-no-repeat">
+    <div className="min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70 bg-[url('/1235.jpg')] bg-cover bg-center bg-no-repeat">
       <Navbar />
 
       <div className="container mx-auto px-4 py-16">

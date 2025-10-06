@@ -3,18 +3,19 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Shield, Menu, Bell, User } from "lucide-react"
+import { Shield, Menu, Bell, User,  Home, BookOpen,Activity, Phone, LayoutDashboard,  X} from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Learn", href: "/learn" },
-  { name: "Alerts", href: "/alerts" },
-  { name: "Drills", href: "/drills" },
-  { name: "Contacts", href: "/contacts" },
-  { name: "Dashboard", href: "/dashboard" },
+  { name: "Home", href: "/", icon: Home },
+  { name: "Learn", href: "/learn", icon: BookOpen },
+  { name: "Alerts", href: "/alerts", icon: Bell },
+  { name: "Drills", href: "/drills", icon: Activity },
+  { name: "Contacts", href: "/contacts", icon: Phone },
+  { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
 ]
+
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +23,7 @@ export function Navbar() {
 
   return (
     <header
-      className="border-b border-white/20 sticky top-0 z-50 page-transition shadow-lg"
+      className="border-b border-white/20 sticky top-0 z-50 page-transition shadow-lg bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70"
       style={{
         background: "gradient-to-r from-amber-500 to-orange-700",
       }}
@@ -35,19 +36,23 @@ export function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-12">
+          <nav className="hidden md:flex items-center gap-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-lg font-medium transition-colors duration-200 hover:text-white/90 ${
-                  pathname === item.href ? "text-white border-b-2  pb-1" : "text-white"
+                className={`flex items-center gap-2 text-lg font-medium transition-colors duration-200 hover:text-white/90 ${
+                  pathname === item.href
+                    ? "text-white border-b-2 border-white pb-1"
+                    : "text-white"
                 }`}
               >
+                <item.icon className="w-5 h-5" />
                 {item.name}
               </Link>
             ))}
           </nav>
+
 
           <div className="flex items-center gap-3">
             {/* <Button
