@@ -23,12 +23,12 @@ export function Navbar() {
 
   return (
     <header
-      className="border-b border-white/20 sticky top-0 z-50 page-transition shadow-lg bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70"
+      className="border-b border-white/20 sticky top-0 z-50 page-transition shadow-lg backdrop-blur-2xl "
       style={{
-        background: "gradient-to-r from-amber-500 to-orange-700",
+        background: "min-h-screen bg-gradient-to-tr from-gray-950 via-gray-800/90 to-slate-600/70",
       }}
     >
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-4 ">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 hover-lift">
             <Shield className="h-8 w-8 text-white" />
