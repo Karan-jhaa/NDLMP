@@ -180,7 +180,7 @@ export default function AlertsPage() {
       </header>
 
       {/* Active Alerts Banner */}
-      {activeAlerts.length > 0 && (
+      {/* {activeAlerts.length > 0 && (
         <div className="bg-destructive/10 border-b border-destructive/20 pulse-glow">
           <div className="container mx-auto px-4 py-3">
             <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ export default function AlertsPage() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
 
       <div className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -272,8 +272,8 @@ export default function AlertsPage() {
           {/* Main Content */}
           <div className="lg:col-span-3 scale-in">
             <div className="mb-8">
-              <h2 className="text-3xl font-bold text-foreground mb-2">Emergency Alerts</h2>
-              <p className="text-muted-foreground">
+              <h2 className="text-3xl font-bold text-white-foreground mb-2">Emergency Alerts</h2>
+              <p className="text-white-foreground">
                 Stay informed with real-time disaster alerts and emergency information for your area.
               </p>
             </div>
@@ -281,8 +281,8 @@ export default function AlertsPage() {
             <Tabs defaultValue="current" className="mb-8">
               <TabsList className="grid w-full grid-cols-3">
                 <TabsTrigger value="current">Current Alerts</TabsTrigger>
-                <TabsTrigger value="recent">Recent</TabsTrigger>
-                <TabsTrigger value="map">Map View</TabsTrigger>
+                {/* <TabsTrigger value="recent">Recent</TabsTrigger> */}
+                {/* <TabsTrigger value="map">Map View</TabsTrigger> */}
               </TabsList>
 
               <TabsContent value="current" className="space-y-4">

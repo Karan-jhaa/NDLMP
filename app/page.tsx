@@ -32,7 +32,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="py-20 px-4 slide-up bg-cover bg-center bg-no-repeat"
+      <section className="py-20 px-4 slide-up bg-cover bg-center bg-no-repeat "
       style={{ backgroundImage: `url(${images[currentIndex]})` }}>
         <div className="container mx-auto text-center ">
           <div className="max-w-4xl mx-auto">
